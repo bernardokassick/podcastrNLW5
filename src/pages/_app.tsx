@@ -1,11 +1,15 @@
 import Header from '../components/Header'
 import '../styles/global.scss'
-import styles from '../styles/app.module.scss'
 import Player from '../components/Player'
+
+import styles from '../styles/app.module.scss'
+import { PlayerContextProvider } from '../components/contexts/PlayerContext'
 
 
 function MyApp({ Component, pageProps }) {
-  return (
+    return (
+      <PlayerContextProvider>
+
     <div className={styles.wrapper}>
       <main>
 
@@ -15,6 +19,8 @@ function MyApp({ Component, pageProps }) {
       <Player />
 
   </div>
+      </PlayerContextProvider>
+   
   ) 
 }
 
